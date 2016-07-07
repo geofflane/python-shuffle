@@ -16,7 +16,7 @@ class Shuffler(object):
     def blockSize(self, value):
         self._blockSize = value
         self.deck = self.make_deck()
-    
+
     @property
     def groups(self):
         return self._groups
@@ -26,12 +26,12 @@ class Shuffler(object):
     def groups(self, value):
         self._groups = value
         self.deck = self.make_deck()
-    
+
     def is_valid_group_size(self):
         return self.blockSize % self.groups == 0
-    
+
     # Fisher-Yates shuffle, Durstenfeld in-place implementation
-    def shuffle(self):            
+    def shuffle(self):
         items = self.deck[:]    # copy deck for in-place shuffle
         n = len(items)
         while n > 1:
